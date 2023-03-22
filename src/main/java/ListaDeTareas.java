@@ -11,7 +11,6 @@ public class ListaDeTareas {
     public void mostrarMenu() {
         ListaDeTareas lista = new ListaDeTareas();
         byte opcion;
-
         do{
             opcion = Byte.parseByte(JOptionPane.showInputDialog(
                     "Menu Principal\n"
@@ -35,7 +34,7 @@ public class ListaDeTareas {
                     break;
 
                 default:
-                    JOptionPane.showMessageDialog(null, "not found");
+                    JOptionPane.showMessageDialog(null, "Tarea no encontrada");
                     break;
 
             }
@@ -54,11 +53,12 @@ public class ListaDeTareas {
     // Este método elimina tareas que hayan sido agregadas por el usuario a la Arraylist listaDeTareas.
     public void eliminarTarea() {
             String nombreTareaBuscada = input("Nombre de la tarea: ");
-            for(Tarea producto : listaDeTareas){
-                if(producto.getNombre().equals(nombreTareaBuscada)){
-                    this.listaDeTareas.remove(nombreTareaBuscada);
-                    System.out.println("Tarea eliminada");
-                    JOptionPane.showMessageDialog (null, producto);
+            for(Tarea tarea : listaDeTareas){
+                if(tarea.getNombre().equals(nombreTareaBuscada)){
+                    listaDeTareas.remove(tarea);
+                    String string = ("Tarea eliminada");
+                    JOptionPane.showMessageDialog (null, tarea);
+                    JOptionPane.showMessageDialog (null, string);
                 }
             }
     }
